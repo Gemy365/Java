@@ -1,0 +1,65 @@
+///////////////////////////////////////////////////////////////////
+//                                                     //
+// ///// Name: Mohamed Gamal Mohamed El-Doctor.       ////////////
+//                                                    // 
+///////  Section: 3                                  ////////////
+//                                                   //
+////////////////////////////////////////////////////////////////
+
+package compiler;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Compiler 
+{
+
+    public static void main(String[] args) 
+    {
+        String line = "mul 3 sub 2 sum 1 3 4";
+        Scanner scanner = new Scanner( line );
+      //Pattern ptrn = Pattern.compile(line);
+      //Matcher match = ptrn.matcher(line); 
+        scanner.lexemes();
+        System.out.println();
+    }
+}
+
+package compiler;
+public class Scanner 
+{
+    private String Line;
+    private String[] Lex;
+
+    public Scanner(String L) 
+    {
+        Line = L;
+    }
+
+    public void language()
+    {
+        String number = "\\d+";
+        String mul = "\\bmul\\b";
+        String sub = "\\bsub\\b";
+        String sum = "\\bsum\\b";
+        String id  = "\\b(_)+(\\w)*|(\\w[^0-9])+([0-9])*\\b";
+        
+    }
+ 
+    public void lexemes()
+    {
+        Lex = Line.split(" ");
+        for(int i = 0; i < Lex.length; i++)
+        {
+            System.out.print(Lex[i] + " ");
+        }
+      // System.out.println("\n" + Lex[0]);
+      // System.out.println(Lex[1]);
+      // System.out.println(Lex[2]);
+      // System.out.println(Lex[3]);
+      // System.out.println(Lex[4]);
+      // System.out.println(Lex[5]);
+      // System.out.println(Lex[6]);
+      // System.out.println(Lex[7]);
+    }
+}

@@ -1,0 +1,34 @@
+///////////////////////////////////////////////////////////////////
+//                                                     //
+// ///// Name: Mohamed Gamal Mohamed El-Doctor.       ////////////
+//                                                    // 
+///////  Section: 3                                  ////////////
+//                                                   //
+////////////////////////////////////////////////////////////////
+  
+package regex;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Regex 
+{
+    public static void main(String[] args) 
+    {
+        String str = "cat cat cat cattie cat";
+        Pattern ptrn = Pattern.compile("(\\b)(cat)(\\b)");
+        Matcher match = ptrn.matcher(str);
+ 
+    while(match.find())
+    {
+        String word = match.group();    //How Many Words Are Matched With This Pattern
+        int start = match.start();      //First Index Of The Match Word
+        int end = match.end();          //End   Index Of The Match Word 
+        System.out.println("Word: " + word +  "\n" + "Start: " + start +  "\n" + "End: " + (end-1));
+        System.out.println("--------------------------");
+    }
+     int len= str.length();            //Length Of String
+     int GC = match.groupCount();      //How Many Groups in ptrn (Regex Group)
+     System.out.println("Length Of String: " + len + "\n" + "Group Counter: " + GC);
+     }
+    
+}
