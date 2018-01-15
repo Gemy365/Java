@@ -1,0 +1,84 @@
+package pharmace;
+import java.util.Scanner;
+public class pharmace
+{
+    public static void main(String[] args) 
+    {
+        Scanner x = new Scanner(System.in);
+        stock s = new stock();
+        System.out.print("Enter Your Name: ");
+        String name = x.nextLine();
+        s.setName(name);
+        System.out.print(s.getName());
+        
+        System.out.print("Enter Your ItemType: ");
+        String itemType = x.nextLine();
+        s.setItemType(itemType);
+        System.out.print(s.getItemType());
+        
+        System.out.print("Enter Your Money: ");
+        double balance = x.nextDouble();
+        s.setBalance(balance);
+        System.out.println(s.getBalance());
+        
+        x.nextLine();        
+        
+        System.err.print("If You Use This Pharmace For The First Time We Will Make Discount For You.. Is It ? ");
+        String answer = x.nextLine();
+        if (answer.equals("yes"))
+        {
+            System.err.println("Congratulation.. You Will Get DisCount :) ");
+            s.Discount(10);
+        }
+        else
+        {
+            s.Discount(0);
+        }  
+    }
+}
+package pharmace;
+
+public class stock
+{
+    String ItemType;
+    String Name;
+    double Balance;
+    public stock()
+    { 
+        printMsg();
+    }
+    public String getName()
+    {
+        return "Hello Mr. " + Name + "\n";
+    }
+    public void setName(String N)
+    {
+        Name = N;
+    }    
+    public String getItemType()
+    {
+        return "Your Item Is: " + ItemType + "\n";
+    }
+    public void setItemType(String IT)
+    {
+        ItemType = IT;
+    }
+    public double getBalance()
+    {
+        System.out.print("Your Money Is: ");
+        return Balance;
+    }
+    public void setBalance(double B)
+    {
+        Balance = B;
+    }   
+    public void Discount(double D)
+    {
+        System.out.println("Please Pay : " + (Balance - (Balance *= D/100)) + " $");
+    }    
+    public void printMsg()
+    {
+        System.err.println("Welcome In Out Pharmace");
+    }
+    
+}
